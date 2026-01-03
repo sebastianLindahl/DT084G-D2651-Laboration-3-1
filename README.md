@@ -18,8 +18,10 @@ händelsehantering och formulärvalidering i JavaScript.
 
 Funktionalitet
 Obligatoriska krav (G-nivå)
+
 DOM-manipulation - Kod för att modifiera Document Object Model
 Händelsehantering - Event handlers för användargränssnitt
+
 Formulärvalidering med följande kontroller:
 Namn får inte vara tomt
 E-post måste ha giltigt format (regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/)
