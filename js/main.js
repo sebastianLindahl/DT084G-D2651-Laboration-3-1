@@ -1,6 +1,5 @@
 // Studentkortsgenerator - DT084G Moment 4
-// Namn: [Ditt namn]
-// Student-ID: [Ditt student-ID]
+// Namn: Sebastian Lindahl
 
 // Väntar tills DOM är laddad innan skriptet körs
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const previewPhone = document.getElementById('previewphone');
     const historySection = document.getElementById('history');
 
-    // Ladda sparad data från localStorage vid sidladdning (valfri del)
+    // Ladda sparad data från localStorage vid sidladdning
     loadFromStorage();
     
     // Ladda och visa historik
@@ -63,22 +62,22 @@ document.addEventListener('DOMContentLoaded', function() {
         previewPhone.textContent = phone;
         previewCard.style.fontFamily = font;
         
-        // Spara i localStorage (valfri del)
+        // Spara i localStorage
         saveToStorage(fullname, email, phone, font);
         
         // Lägg till i historik
         addToHistory(fullname, email, phone, font);
         
-        // Visa bekräftelsemeddelande (optional, för bättre UX)
+        // Visa bekräftelsemeddelande
         console.log('Studentkort genererat!');
     }
 
     /**
      * Validerar användarens inmatning
-     * @param {string} fullname - Fullständigt namn
-     * @param {string} email - E-postadress
-     * @param {string} phone - Telefonnummer
-     * @returns {Array} - Array med felmeddelanden
+     * {string} fullname - Fullständigt namn
+     * {string} email - E-postadress
+     * {string} phone - Telefonnummer
+     * {Array} - Array med felmeddelanden
      */
     function validateInput(fullname, email, phone) {
         const errors = [];
@@ -111,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /**
      * Visar felmeddelanden i en lista
-     * @param {Array} errors - Array med felmeddelanden
+     * {Array} errors - Array med felmeddelanden
      */
     function displayErrors(errors) {
         errorList.innerHTML = ''; // Rensa tidigare fel
@@ -166,10 +165,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /**
      * Sparar inmatade värden till localStorage (valfri del)
-     * @param {string} fullname - Fullständigt namn
-     * @param {string} email - E-postadress
-     * @param {string} phone - Telefonnummer
-     * @param {string} font - Valt typsnitt
+     * {string} fullname - Fullständigt namn
+     * {string} email - E-postadress
+     * {string} phone - Telefonnummer
+     * {string} font - Valt typsnitt
      */
     function saveToStorage(fullname, email, phone, font) {
         const cardData = {
@@ -184,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
-     * Laddar sparade värden från localStorage (valfri del)
+     * Laddar sparade värden från localStorage
      */
     function loadFromStorage() {
         const savedData = localStorage.getItem('studentCard');
@@ -209,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
-     * Rensar sparad data från localStorage (valfri del)
+     * Rensar sparad data från localStorage
      */
     function clearStorage() {
         localStorage.removeItem('studentCard');
@@ -217,10 +216,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /**
      * Lägger till ett genererat kort i historiken
-     * @param {string} fullname - Fullständigt namn
-     * @param {string} email - E-postadress
-     * @param {string} phone - Telefonnummer
-     * @param {string} font - Valt typsnitt
+     * {string} fullname - Fullständigt namn
+     * {string} email - E-postadress
+     * {string} phone - Telefonnummer
+     * {string} font - Valt typsnitt
      */
     function addToHistory(fullname, email, phone, font) {
         // Hämta befintlig historik från localStorage
@@ -298,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
         historySection.appendChild(ul);
     }
 
-    // Extra: Lägg till möjlighet att rensa historik
+    // Möjlighet att rensa historik
     const clearHistoryBtn = document.createElement('button');
     clearHistoryBtn.textContent = 'Rensa historik';
     clearHistoryBtn.className = 'btn';
